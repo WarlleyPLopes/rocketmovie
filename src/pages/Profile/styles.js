@@ -6,24 +6,29 @@ export const Container = styled.div`
   > header {
     width: 100%;
     height: 144px;
-
     background: ${({ theme }) => theme.COLORS.BACKGROUND_PINK};
-
-    display: flex;
-    align-items: center;
-
-    padding: 0 124px;
     color: ${({ theme }) => theme.COLORS.PINK};
 
-    a {
+    .container {
+      max-width: 1366px;
+      height: 100%;
+      display: flex;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    button {
       display: flex;
       align-items: center;
       gap: 8px;
+      border: none;
+      background: none;
+      color: ${({ theme }) => theme.COLORS.PINK};
     }
-    
+
     svg {
       color: ${({ theme }) => theme.COLORS.PINK};
-      font-size: 24px;
+      font-size: 20px;
     }
   }
 `;
@@ -53,7 +58,7 @@ export const Avatar = styled.div`
   > label {
     width: 48px;
     height: 48px;
-    background-color: ${({ theme }) => theme.COLORS.ORANGE};
+    background-color: ${({ theme }) => theme.COLORS.PINK};
     border-radius: 50%;
 
     display: flex;
