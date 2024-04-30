@@ -5,25 +5,24 @@ export const Container = styled.button`
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_PINK};
 
   border: none;
-  border-radius: 10px;
+  border-radius: 16px;
 
-  padding: 22px;
-  margin-bottom: 16px;
+  padding: 32px;
+  margin-bottom: 15px;
 
   > h1 {
-    flex: 1;
     text-align: left;
-    font-weight: 700;
     font-size: 24px;
+    font-weight: 700;
     color: ${({ theme }) => theme.COLORS.WHITE};
   }
 
-  p{
+  p {
+    font-weight: 400;
+    margin-top: 15px;
     display: flex;
     justify-content: left;
     color: ${({ theme }) => theme.COLORS.GRAY_200};
-    margin-top: 20PX;
-
   }
 
   > footer {

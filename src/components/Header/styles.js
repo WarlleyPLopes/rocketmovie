@@ -2,12 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.header`
   grid-area: header;
-  height: 123px;
-  width: 100%;
-
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+  height: 116px;
+  max-width: 1366px;
+  margin: 0 auto;
 
   display: flex;
   align-items: center;
@@ -27,6 +24,7 @@ export const Brand = styled.div`
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
   > h1 {
+    font-weight: 700;
     font-size: 24px;
     color: ${({ theme }) => theme.COLORS.PINK};
   }
@@ -35,27 +33,28 @@ export const Brand = styled.div`
 export const Profile = styled.div`
   display: flex;
   align-items: center;
+  justify-content: end;
 
   > div {
-    min-width: 136px;
+    min-width: 110px;
     display: flex;
     flex-direction: column;
     justify-content: end;
     text-align: right;
     margin: 0 9px 0 64px;
-
-    a {
-      text-decoration: none;
-      color: ${({theme}) => theme.COLORS.GRAY_200};
-    }
   }
 
-  > img {
+  div strong {
+    cursor: pointer;
+  }
+  div button {
+    text-align: end;
+  }
+
+  a img {
     width: 56px;
     height: 56px;
     border-radius: 50%;
     border: 1px solid ${({theme}) => theme.COLORS.GRAY_200};
   }
-
-  
 `;

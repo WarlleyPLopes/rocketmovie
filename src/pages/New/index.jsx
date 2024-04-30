@@ -1,11 +1,11 @@
-import { FiArrowLeft } from "react-icons/fi";
-import { Header } from "../../components/Header";
-import { Container, Form } from "./styles";
-import { Input } from "../../components/Input";
-import { Section } from "../../components/Section";
-import { Textarea } from "../../components/Textarea";
-import { Button } from "../../components/Button";
 import { NoteItem } from "../../components/NoteItem";
+import { Textarea } from "../../components/Textarea";
+import { Section } from "../../components/Section";
+import { Header } from "../../components/Header";
+import { Button } from "../../components/Button";
+import { Input } from "../../components/Input";
+import { FiArrowLeft } from "react-icons/fi";
+import { Container, Form } from "./styles";
 import { Link } from "react-router-dom";
 
 export function New() {

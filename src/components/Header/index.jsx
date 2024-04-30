@@ -1,6 +1,6 @@
 import { Brand, Container, Profile } from "./styles.js";
-import {Input} from '../Input'
-import { Link } from "react-router-dom";
+import { ButtonText } from "../ButtonText";
+import { Input } from "../Input";
 
 export function Header() {
   return (
@@ -9,20 +9,20 @@ export function Header() {
         <h1>RocketMovie</h1>
       </Brand>
 
-      <Input 
-        type='text' 
-        placeholder='Pesquisar pelo título'
-      />
+      <Input type="text" placeholder="Pesquisar pelo título" />
 
-      <Link to='/profile'>
       <Profile>
         <div>
           <strong>Warlley Lopes</strong>
-          <Link href="/">sair</Link>
+          <ButtonText title={"Sair"} />
         </div>
-        <img src="https://github.com/WarlleyPLopes.png" alt="Foto do usuário" />
+        <a href="/profile">
+          <img
+            src="https://github.com/WarlleyPLopes.png"
+            alt="Foto do usuário"
+          />
+        </a>
       </Profile>
-      </Link>
     </Container>
   );
 }

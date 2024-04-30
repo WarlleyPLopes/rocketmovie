@@ -31,26 +31,18 @@ export default createGlobalStyle`
     button:hover, a:hover {
         filter: brightness(0.9)
     }
-/* 
-    ::-webkit-scrollbar{
-        background-color: transparent;
-    }
-
-    ::-webkit-scrollbar-thumb{
-        width: 3px;
-        height: 30px;
-        border-radius: 50px;
-    } */
 
     ::-webkit-scrollbar-track {
     background-color: transparent;
-}
-::-webkit-scrollbar {
-    width: 10px;
-    background: transparent;
-}
-::-webkit-scrollbar-thumb {
-    background:${({ theme }) => theme.COLORS.PINK};
-    border-radius: 50px;
-}
-`;
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background:${({ theme }) => theme.COLORS.PINK};
+        border-radius: 50px;
+    }
+    `;

@@ -1,23 +1,33 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-padding: 0 80px;
 > section{
+    max-width: 1366px;
+    margin: 0 auto;
+
+    
     .title {
-        margin-top: 40px;
         display: flex;
         justify-content: space-between;
-        flex-direction: row;
-        margin-bottom: 40px;
+        margin-top: 48px;
+        margin-bottom: 45px; 
+
+        h1 {
+            font-size: 32px;
+            font-weight: 400;
+            color: ${({theme}) => theme.COLORS.WHITE};
+        }
         
         button {
             display: flex;
             align-items: center;
+            border-radius: 8px;
+            border: none;
+            padding: 16px 32px;
+            gap: 8px;
+
             background-color: ${({theme}) => theme.COLORS.PINK};;
             color: ${({theme}) => theme.COLORS.BLACK};
-            padding: 10px;
-            border: none;
-            border-radius: 8px;
         }
     }
 
@@ -25,5 +35,10 @@ padding: 0 80px;
 `;
 
 export const Content = styled.div`
-
 `;
+
+export const Line = styled.div`
+width: 100%;
+height: 1px;
+background-color: ${({theme}) => theme.COLORS.BACKGROUND_700};
+`
