@@ -1,22 +1,31 @@
 import { FiArrowLeft, FiClock } from "react-icons/fi";
 import { MdStar, MdStarBorder } from "react-icons/md";
 import { Header } from "../../components/Header";
-import { ButtonText } from "../../components/ButtonText";
-import { Container, Content, Info } from "./styles.js";
+import { Container, Info } from "./styles.js";
 import { Section } from "./styles.js";
 import { Tag } from "../../components/Tag/index.jsx";
+import {Line} from '../Home/styles.js'
+import { useNavigate } from "react-router-dom";
 
 export function Details() {
+const navigate = useNavigate()
+
+function handleBack(){
+  navigate(-1)
+}
+
   return (
     <Container>
       <Header />
+      <Line/>
 
       <main>
-        <Content>
-          <div>
-            <FiArrowLeft />
-            <ButtonText title="Voltar" />
-          </div>
+          <button type="button" onClick={handleBack}>
+            <FiArrowLeft/>
+            Voltar
+          </button>
+  
+          
           <Section>
             <div>
               <h1>Interestellar</h1>
@@ -77,7 +86,6 @@ export function Details() {
             </p>
             </div>
           </Section>
-        </Content>
       </main>
     </Container>
   );

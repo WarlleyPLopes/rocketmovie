@@ -35,14 +35,15 @@ export default createGlobalStyle`
     ::-webkit-scrollbar-track {
     background-color: transparent;
     }
-
+    
     ::-webkit-scrollbar {
-        width: 10px;
+        width: 8px;
         background: transparent;
-    }
+    } 
+   
 
     ::-webkit-scrollbar-thumb {
         background:${({ theme }) => theme.COLORS.PINK};
-        border-radius: 50px;
-    }
+        border-radius: 50px;        
+    } 
     `;

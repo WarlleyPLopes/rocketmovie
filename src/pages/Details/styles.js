@@ -3,40 +3,31 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-  padding: 0 80px;
-  display: grid;
-  grid-template-rows: 105px auto;
-  grid-template-areas:
-    "header"
-    "content";
-
+ 
   > main {
-    grid-area: content;
+    max-width: 1366px;
+    margin: 0 auto;
     overflow-y: auto;
-    padding: 64px 0;
-  }
-`;
-
-export const Content = styled.div`
-  margin: 0 auto;
-
-  display: flex;
-  flex-direction: column;
-
-  > div {
-    display: flex;
-    align-items: center;
-    gap: 2.5px;
-
-    svg {
-      color: ${({ theme }) => theme.COLORS.PINK};
-    }
+    padding: 40px 0;
 
     button {
+      display: flex;
+      background: none;
+      border: none;
+      align-items: center;
+      gap: 8px;
       color: ${({ theme }) => theme.COLORS.PINK};
+      
+      svg {
+        font-size: 16px;
+        color: ${({ theme }) => theme.COLORS.PINK};
+      }
+      
     }
   }
 `;
+
+
 
 export const Section = styled.section`
   padding-top: 24px;
