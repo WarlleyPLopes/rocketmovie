@@ -6,6 +6,6 @@ export const Container = styled.section`
   > h1 {
     font-size: 36px;
     font-weight: 500;
-    padding-top: 64px;
+    padding-top: 40px;
   }
 `

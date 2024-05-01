@@ -2,13 +2,20 @@ import { FiArrowLeft, FiUser, FiMail, FiLock, FiCamera } from "react-icons/fi";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { Container, Form, Avatar } from "./styles";
+import { useNavigate } from "react-router-dom";
 
 export function Profile() {
+  const navigate = useNavigate()
+
+  function handleBack(){
+    navigate(-1)
+  }
+  
   return (
     <Container>
       <header>
         <div className="container">
-          <button>
+          <button type="button" onClick={handleBack}>
             <FiArrowLeft />
             Voltar
           </button>

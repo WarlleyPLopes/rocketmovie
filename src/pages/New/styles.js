@@ -1,62 +1,80 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
-  height: 100vh;
+  > main {
+    max-width: 1366px;
+    margin: 0 auto;
 
-  display: grid;
-  padding: 0 80px;
-  grid-template-rows: 105px auto;
-  grid-template-areas:
-    "header"
-    "content";
+    
+  }
 `;
 
 export const Form = styled.form`
+
+
   > header {
-    margin-top: 40px;
+
+    button {
+      display: flex;
+      align-items: center;
+      margin-top: 40px;
+      gap: 8px;
+
+      border: none;
+      background: none;
+      color: ${({ theme }) => theme.COLORS.PINK};
+    }
 
     h1 {
       margin: 40px 0;
-    }
-
-    a {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: ${({ theme }) => theme.COLORS.PINK};
-      margin-top: 40px;
+      font-size: 36px;
+      font-weight: 500;
+      color: ${({ theme }) => theme.COLORS.WHITE};
     }
   }
 
-  > .separete {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    margin-bottom: 40px;
+  > .grid-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
 
-    .black {
-      background-color: ${({ theme }) => theme.COLORS.BLACK};
-      color: ${({ theme }) => theme.COLORS.PINK};
+    .full-width{
+      grid-column: 1/3;
     }
   }
+
+
 
   > section {
+    margin-top: 0;
     h1 {
-    padding-bottom: 16px;
-    margin-bottom: 28px;
+      margin-bottom: 24px;
+      font-size: 20px;
+      font-weight: 400;
+      color: ${({ theme }) => theme.COLORS.GRAY_100};
+    }
 
-    color: ${({ theme}) => theme.COLORS.GRAY_100};
-    font-size: 20px;
-    font-weight: 400;
+    .container-note{
+      display: flex;
+      flex-direction: row;
+      padding: 16px;
+      border-radius: 8px;
+      background: ${({theme}) => theme.COLORS.BLACK};
+    }
+
   }
 
-  div {
-    padding: 5px;
-    display: flex;
-    flex-direction: row;
-    background-color: ${({theme}) => theme.COLORS.BLACK};
-    border-radius: 15px;
+  > .grid-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+
+    .black {
+      background-color: ${({theme}) => theme.COLORS.BLACK};
+      color: ${({theme}) => theme.COLORS.WHITE}
+    }
   }
-  }
+
+
+margin-bottom: 40px;
 `;

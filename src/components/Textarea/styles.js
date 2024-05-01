@@ -4,7 +4,7 @@ export const Container = styled.textarea`
   width: 100%;
   height: 272px;
 
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+  background-color: ${({ theme }) => theme.COLORS.INPUT_COLOR};
   color: ${({ theme }) => theme.COLORS.GRAY_300};
 
   border: none;
