@@ -1,8 +1,14 @@
 import { Brand, Container, Profile } from "./styles.js";
+import { useAuth } from "../../hooks/auth.jsx";
 import { ButtonText } from "../ButtonText";
 import { Input } from "../Input";
+import { api } from "../../services/api.js";
 
 export function Header() {
+  const {singOut, user} = useAuth()
+
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
+
   return (
     <Container>
       <Brand>
@@ -13,13 +19,13 @@ export function Header() {
 
       <Profile>
         <div>
-          <strong>Warlley Lopes</strong>
-          <ButtonText title={"Sair"} />
+          <strong>{user.name}</strong>
+          <ButtonText title={"Sair"} onClick={singOut}/>
         </div>
         <a href="/profile">
           <img
-            src="https://github.com/WarlleyPLopes.png"
-            alt="Foto do usuário"
+            src={avatarUrl}
+            alt={user.name}
           />
         </a>
       </Profile>
