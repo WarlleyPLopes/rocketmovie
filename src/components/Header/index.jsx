@@ -3,6 +3,7 @@ import { useAuth } from "../../hooks/auth.jsx";
 import { ButtonText } from "../ButtonText";
 import { Input } from "../Input";
 import { api } from "../../services/api.js";
+import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
 
 export function Header() {
   const {singOut, user} = useAuth()
