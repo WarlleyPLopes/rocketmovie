@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
 > section{
     max-width: 1366px;
-    margin: 0 auto;
+    margin: 50px auto 0;
 
     
     .title {

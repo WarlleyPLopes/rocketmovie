@@ -1,7 +1,6 @@
 import { Brand, Container, Profile } from "./styles.js";
 import { useAuth } from "../../hooks/auth.jsx";
 import { ButtonText } from "../ButtonText";
-import { Input } from "../Input";
 import { api } from "../../services/api.js";
 import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
 
@@ -15,8 +14,6 @@ export function Header() {
       <Brand>
         <h1>RocketMovie</h1>
       </Brand>
-
-      <Input type="text" placeholder="Pesquisar pelo título" />
 
       <Profile>
         <div>
