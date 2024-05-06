@@ -110,8 +110,7 @@ export function New() {
             </div>
           </Section>
 
-          <div className="grid-buttons">
-            <Button className="black" title="Excluir filme" />
+          <div className="save-button">
             <Button title="Salvar alterações" onClick={handleNewNote} />
           </div>
         </Form>

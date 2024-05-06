@@ -3,12 +3,18 @@ import { useAuth } from "../../hooks/auth.jsx";
 import { ButtonText } from "../ButtonText";
 import { api } from "../../services/api.js";
 import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
+import { useNavigate } from "react-router-dom";
 
 export function Header() {
   const {singOut, user} = useAuth()
+  const navigation = useNavigate()
 
   const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
 
+  function handleSingOut(){
+    navigation("/")
+    singOut()
+  }
   return (
     <Container>
       <Brand>
@@ -18,7 +24,7 @@ export function Header() {
       <Profile>
         <div>
           <strong>{user.name}</strong>
-          <ButtonText title={"Sair"} onClick={singOut}/>
+          <ButtonText title={"Sair"} onClick={handleSingOut}/>
         </div>
         <a href="/profile">
           <img

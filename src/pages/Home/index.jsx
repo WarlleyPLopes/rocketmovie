@@ -3,7 +3,7 @@ import { FiPlus } from "react-icons/fi";
 
 import { api } from "../../services/api";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Input } from "../../components/Input";
 import { Note } from "../../components/Note";
 import { Header } from "../../components/Header";
@@ -13,6 +13,12 @@ export function Home() {
   const [search, setSearch] = useState("");
   const [notes, setNotes] = useState([]);
 
+  const navigate = useNavigate();
+
+  function handleDetails(id) {
+    navigate(`/details/${id}`);
+  }
+
   useEffect(() => {
     async function fetchMovies() {
       const response = await api.get(`/notes?title=${search}`);
@@ -20,6 +26,7 @@ export function Home() {
     }
     fetchMovies();
   }, [search]);
+
   return (
     <Container>
       <Header />
@@ -42,7 +49,11 @@ export function Home() {
 
         <Content>
           {notes.map((note) => (
-            <Note key={String(note.id)} data={note} />
+            <Note
+              key={String(note.id)}
+              data={note}
+              onClick={() => handleDetails(note.id)}
+            />
           ))}
         </Content>
       </section>

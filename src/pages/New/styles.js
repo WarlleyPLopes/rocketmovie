@@ -64,14 +64,12 @@ export const Form = styled.form`
 
   }
 
-  > .grid-buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 40px;
-
-    .black {
-      background-color: ${({theme}) => theme.COLORS.BLACK};
-      color: ${({theme}) => theme.COLORS.WHITE}
+  > .save-button {
+    display: flex;
+    justify-content: center;
+    
+    button {
+      max-width: 536px;
     }
   }
 

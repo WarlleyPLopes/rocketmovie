@@ -24,6 +24,14 @@ export const Container = styled.div`
       }
       
     }
+
+     .black {
+      max-width: 520px;
+      display: flex;
+      justify-content: center;
+      background-color: ${({theme}) => theme.COLORS.BLACK};
+      color: ${({theme}) => theme.COLORS.PINK}
+    } 
   }
 `;
 
