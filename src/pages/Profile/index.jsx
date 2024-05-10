@@ -3,7 +3,7 @@ import { FiArrowLeft, FiUser, FiMail, FiLock, FiCamera } from "react-icons/fi";
 
 import { useAuth } from "../../hooks/auth";
 
-import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 
 import { api } from "../../services/api";
 import { Input } from "../../components/Input";
@@ -19,11 +19,18 @@ export function Profile() {
   const [passwordOld, setPasswordOld] = useState();
   const [passwordNew, setPasswordNew] = useState();
 
-  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
-  const [avatar, setAvatar] = useState(avatarUrl)
-  const [avatarFile, setAvatarFile] = useState(null)
+  const avatarUrl = user.avatar
+    ? `${api.defaults.baseURL}/files/${user.avatar}`
+    : avatarPlaceholder;
+
+  const [avatar, setAvatar] = useState(avatarUrl);
+  const [avatarFile, setAvatarFile] = useState(null);
 
   const navigate = useNavigate();
+
+  function handleBack() {
+    navigate(-1);
+  }
 
   async function handleUpdate() {
     const updated = {
@@ -33,21 +40,17 @@ export function Profile() {
       old_password: passwordOld,
     };
 
-    const userUpdated = Object.assign(updated, user)
+    const userUpdated = Object.assign( user, updated );
 
-    await updateProfile({user: userUpdated, avatarFile});
+    await updateProfile({ user:userUpdated, avatarFile });
   }
 
-  function handleChangeAvatar(event){
-  const file = event.target.files[0]
-  setAvatarFile(file);
-  
-  const imagePreview = URL.createObjectURL(file)
-  setAvatar(imagePreview);
-  }
+  function handleChangeAvatar(event) {
+    const file = event.target.files[0];
+    setAvatarFile(file);
 
-  function handleBack() {
-    navigate(-1);
+    const imagePreview = URL.createObjectURL(file);
+    setAvatar(imagePreview);
   }
 
   return (
@@ -63,17 +66,12 @@ export function Profile() {
 
       <Form>
         <Avatar>
-          <img
-            src={avatar}
-            alt="Foto do usuário"
-          />
+          <img src={avatar} alt="Foto do usuário" />
+
           <label htmlFor="avatar">
             <FiCamera />
-            <input 
-            id="avatar" 
-            type="file" 
-            onChange={handleChangeAvatar}
-            />
+
+            <input id="avatar" type="file" onChange={handleChangeAvatar} />
           </label>
         </Avatar>
 
@@ -107,7 +105,7 @@ export function Profile() {
           onChange={(e) => setPasswordNew(e.target.value)}
         />
 
-        <Button title="salvar" onClick={handleUpdate}/>
+        <Button title="salvar" onClick={handleUpdate} />
       </Form>
     </Container>
   );

@@ -12,8 +12,8 @@ function AuthProvider({ children }) {
       const response = await api.post("/sessions", { email, password });
       const { user, token } = response.data;
 
-      localStorage.setItem("@rocketmovie:user", JSON.stringify(user));
-      localStorage.setItem("@rocketmovie:token", token);
+      localStorage.setItem("@rocketmovies:user", JSON.stringify(user));
+      localStorage.setItem("@rocketmovies:token", token);
 
       api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
@@ -22,35 +22,35 @@ function AuthProvider({ children }) {
       if (error.response) {
         alert(error.response.data.message);
       } else {
-        alert("Não foi possivel entrar");
+        alert("Não foi possivel entrar.");
       }
     }
   }
 
   function singOut() {
-    localStorage.removeItem("@rocketnotes:user");
-    localStorage.removeItem("@rocketnotes:token");
+    localStorage.removeItem("@rocketmovies:user");
+    localStorage.removeItem("@rocketmovies:token");
 
     setData({});
   }
 
   async function updateProfile({ user, avatarFile }) {
     try {
-      if(avatarFile){
-        const fileUploadForm = new FormData()
-        fileUploadForm.append("avatar", avatarFile)
+      if (avatarFile) {
+        const fileUploadForm = new FormData();
+        fileUploadForm.append("avatar", avatarFile);
 
-        const response = await api.patch("/users/avatar", fileUploadForm)
-        user.avatar = response.data.avatar
+        const response = await api.patch("/users/avatar", fileUploadForm);
+        user.avatar = response.data.avatar;
       }
 
       await api.put("/users", user);
-      localStorage.setItem("@rocketmovie:user", JSON.stringify(user));
+      localStorage.setItem("@rocketmovies:user", JSON.stringify(user));
 
       setData({ user, token: data.token });
-      alert("Perfil atualizado!");
+      alert("Perfil atualizado");
 
-    } catch (error) {
+    }  catch (error) {
       if (error.response) {
         alert(error.response.data.message);
       } else {
@@ -60,8 +60,8 @@ function AuthProvider({ children }) {
   }
 
   useEffect(() => {
-    const user = localStorage.getItem("@rocketmovie:user");
-    const token = localStorage.getItem("@rocketmovie:token");
+    const token = localStorage.getItem("@rocketmovies:token");
+    const user = localStorage.getItem("@rocketmovies:user");
 
     if (token && user) {
       api.defaults.headers.common["Authorization"] = `Bearer ${token}`;

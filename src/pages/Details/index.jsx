@@ -58,13 +58,6 @@ export function Details() {
           <Section>
             <div>
               <h1>{data.title}</h1>
-              {/* <div>
-                <MdStar />
-                <MdStar />
-                <MdStar />
-                <MdStar />
-                <MdStarBorder />
-              </div> */}
             </div>
 
             <Info>
